@@ -1,3 +1,4 @@
+from pprint import pprint 
 users = [
     {
         "first_name": "Angeline",
@@ -27,4 +28,19 @@ users = [
 
 
 youngest = max(users, key=lambda user: len(user['first_name']))
-print(youngest)
+pprint(youngest)
+
+e = 0
+w = 0
+for i in users:
+    if i['gender'] == 'Male':
+        e += 1
+    elif i['gender'] == 'Female':
+        w += 1
+
+wo = w * 100 / len(users)
+er = e * 100 / len(users)
+
+print("\n")
+print(f'     - Erkaklar: {e} ta, {er:.0f}%')
+print(f'     - Ayollar: {w} ta, {wo:.0f}%')

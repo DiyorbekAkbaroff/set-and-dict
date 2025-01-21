@@ -1,3 +1,4 @@
+from pprint import pprint
 data = [
     {"full_name":"Eugene Elsmor","company":"Kazu","position":"Electrical Engineer","salary":"$4440.86"},
     {"full_name":"Joni Stredder","company":"JumpXS","position":"Environmental Tech","salary":"$870.05"},
@@ -34,20 +35,65 @@ data = [
 
 # 1 - masala: Human Resources Manager bo'limida nechta odam ishlashini hisoblang
 
+
+# t = 0
+# for i in data:
+#     if i["position"] == "Human Resources Manager":
+#         t += 1
+# print(t)
+
+
 # 2 - "Riffpath" kompaniyasida ishlaydigan barcha 
 # hodimlarga qancha maosh to'lanishini hisoblang 
 # (maosh olida $ belgisi bor e'tiborli bo'ling)
 
+
+# t = 0
+# for i in data:
+#     if i["company"] == "Riffpath":
+#         t += float(i['salary'][1:])
+# print(t)
+
 # 3 - Ismi "K" dan boshlanadigan hodimlarni oyligini 2-karra oshiring
+
+
+# for i in data:
+#     if i["full_name"][0] == "K":
+#         t = float(i['salary'][1:]) * 2
+#         i['salary'] = f"${t}"
+# pprint(data)
+
 
 # 4 - barcha "full_name" keylari ni o'rniga "FIO" ga almashtiring 
 # value lar o'chib ketmasin
 
+# for i in data:
+#     f = i["full_name"]
+#     del i["full_name"]
+#     i["FIO"] = f
+
+# pprint(data)
 
 # 5 - masala "position" keyning "valuesida" -> "senior" yoki "junior"
 # satri bor barcha hodimlarni o'chirib tashlang
 
+# for i in data:
+#     if "senior" in i["position"].lower() or i["position"].lower():
+#         data.remove(i)
+# pprint(data)
+
 # 6 - masala "Assistant" lar soni nechtaligini hisoblang
+
+# t = 0
+# for i in data:
+#     if "Assistant" in i["position"] or "assistant" in i["position"]:
+#         t += 1
+# print(t)
 
 # 7 - masala Barcha "Assistant" larni "Junior" pazitsiyaga o'tqazing
 # misol -> "Assistant Professor" -> "Junior Professor"
+
+for i in data:
+    i["position"] = i["position"].replace("Assistant", "Junior")
+
+pprint(data)
